@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         botao.onclick = function() {
                             modal.style.display = 'block';
                             const ordensAssunto = linhas.filter(linha => linha.Assunto === assunto && colaboradoresEspecificos.hasOwnProperty(linha.Colaborador));
-                            const conteudoTabela = `<table><tr><th>Colaborador</th><th>Cliente</th><th>Endereço</th></tr>` +
+                            const conteudoTabela = `<table><tr><th>Colaborador</th><th>Cliente</th><th>Endereço</th><th>Fechamento</th></tr>` +
                                 ordensAssunto.map(ordem => {
                                     return `<tr><td>${ordem.Colaborador}</td><td>${ordem.Cliente}</td><td>${ordem.Endereço}</td><td>${ordem.Fechamento ? numeroSerieParaData(ordem.Fechamento) : 'Data de fechamento não consta'}</td></tr>`;
                                 }).join('') + '</table>';
