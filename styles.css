@@ -1,0 +1,163 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #1c1a2c; /* Cor de fundo escura */
+    margin: 0;
+    padding: 0;
+    color: #eee; /* Cor do texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #25243d; /* Cor de fundo mais escura */
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    position: sticky;
+    top: 0;
+}
+
+h1 {
+    color: #eee; /* Cor do título */
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #dd901d; /* Cor azul escuro para o botão de upload */
+    color: white; /* Cor do texto no botão de upload */
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background-color: #b47515; /* Cor azul mais escura ao passar o mouse */
+}
+
+#resultados {
+    position: relative;
+    width: 80%;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: #25243d; /* Cor de fundo mais escura */
+}
+
+.total-ordens {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    color: #eee; /* Cor do texto */
+}
+
+.resumo-colaborador > div,
+.resumo-assuntos > div {
+    background-color: #33333300; /* Cor de fundo dos blocos de resumo */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+}
+
+.resumo-assuntos {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8); /* Fundo escuro para o modal */
+}
+
+.modal-content {
+    background-color: #1c1a2c; /* Cor de fundo azul escuro para o modal */
+    margin: 10% auto;
+    padding: 20px; /* Adiciona preenchimento ao modal */
+    width: 80%;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.fechar {
+    color: #eee; /* Cor do botão de fechar */
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.fechar:hover {
+    color: #fff; /* Cor do botão de fechar ao passar o mouse */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button, .ver-detalhes {
+    padding: 8px 16px;
+    background-color: #dd901d; /* Cor azul para os botões */
+    color: white; /* Cor do texto nos botões */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: block;
+    width: auto;
+    margin-top: 10px;
+    height: 40px;
+}
+
+button:hover, .ver-detalhes:hover {
+    background-color: #b47515; /* Cor azul mais escura ao passar o mouse */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #dd901d; /* Cor do cabeçalho da tabela */
+    color: #eee; /* Cor do texto no cabeçalho da tabela */
+    max-width: 100%;
+}

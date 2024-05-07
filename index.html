@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Auditoria de Ordens de Serviço</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Auditoria de Ordens de Serviço</h1>
+    <input type="file" id="entradaArquivo" accept=".xlsx, .xls">
+    <div id="resultados" class="centralizado">
+        <div class="resumo-colaborador">
+            <!-- Aqui será exibido o resumo por colaborador -->
+        </div>
+        <div class="resumo-assuntos">
+            <!-- Aqui será exibido o resumo por assunto -->
+        </div>
+        <div class="total-ordens">
+            <!-- Aqui será exibido o total de ordens de serviço -->
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <div id="texto-modal"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
