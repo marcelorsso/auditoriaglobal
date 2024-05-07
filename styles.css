@@ -64,8 +64,8 @@ input[type="file"]:hover {
     color: #eee;
 }
 
-.resumo-colaborador > div,
-.resumo-assuntos > div {
+.resumo-colaborador>div,
+.resumo-assuntos>div {
     background-color: #33333300;
     padding: 20px;
     border-radius: 8px;
@@ -92,7 +92,7 @@ input[type="file"]:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-content {
@@ -102,7 +102,7 @@ input[type="file"]:hover {
     width: 80%;
     max-width: 1200px;
     border-radius: 8px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.25);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,7 +125,8 @@ input[type="file"]:hover {
     cursor: pointer;
 }
 
-button, .ver-detalhes {
+button,
+.ver-detalhes {
     padding: 8px 16px;
     background-color: #dd901d;
     color: white;
@@ -139,7 +140,8 @@ button, .ver-detalhes {
     height: 40px;
 }
 
-button:hover, .ver-detalhes:hover {
+button:hover,
+.ver-detalhes:hover {
     background-color: #b47515;
 }
 
@@ -149,7 +151,8 @@ table {
     margin-top: 20px;
 }
 
-th, td {
+th,
+td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -159,4 +162,47 @@ th {
     background-color: #dd901d;
     color: #eee;
     max-width: 100%;
+}
+
+/* Media queries para tornar o site responsivo */
+
+/* Estilos para telas com largura máxima de 768px (por exemplo, tablets e dispositivos móveis em modo paisagem) */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .upload-container {
+        padding: 10px;
+    }
+
+    button,
+    .ver-detalhes {
+        padding: 6px 12px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
+
+/* Estilos para telas com largura máxima de 480px (por exemplo, dispositivos móveis em modo retrato) */
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    .upload-container {
+        padding: 5px;
+    }
+
+    button,
+    .ver-detalhes {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    table {
+        font-size: 10px;
+    }
 }
