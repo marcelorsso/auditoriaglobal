@@ -1,9 +1,9 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #1c1a2c; /* Cor de fundo escura */
+    background-color: #1c1a2c;
     margin: 0;
     padding: 0;
-    color: #eee; /* Cor do texto */
+    color: #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,7 @@ body {
 .upload-container {
     text-align: center;
     padding: 20px;
-    background-color: #25243d; /* Cor de fundo mais escura */
+    background-color: #25243d;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 100;
@@ -21,15 +21,15 @@ body {
 }
 
 h1 {
-    color: #eee; /* Cor do título */
+    color: #eee;
     margin-bottom: 10px;
 }
 
 input[type="file"] {
     cursor: pointer;
     padding: 10px 15px;
-    background-color: #dd901d; /* Cor azul escuro para o botão de upload */
-    color: white; /* Cor do texto no botão de upload */
+    background-color: #dd901d;
+    color: white;
     border: none;
     border-radius: 4px;
     margin-top: 10px;
@@ -37,7 +37,7 @@ input[type="file"] {
 }
 
 input[type="file"]:hover {
-    background-color: #b47515; /* Cor azul mais escura ao passar o mouse */
+    background-color: #b47515;
 }
 
 #resultados {
@@ -50,7 +50,7 @@ input[type="file"]:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    background-color: #25243d; /* Cor de fundo mais escura */
+    background-color: #25243d;
 }
 
 .total-ordens {
@@ -61,12 +61,12 @@ input[type="file"]:hover {
     width: 100%;
     text-align: center;
     line-height: 40px;
-    color: #eee; /* Cor do texto */
+    color: #eee;
 }
 
 .resumo-colaborador > div,
 .resumo-assuntos > div {
-    background-color: #33333300; /* Cor de fundo dos blocos de resumo */
+    background-color: #33333300;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -92,13 +92,13 @@ input[type="file"]:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.8); /* Fundo escuro para o modal */
+    background-color: rgba(0,0,0,0.8);
 }
 
 .modal-content {
-    background-color: #1c1a2c; /* Cor de fundo azul escuro para o modal */
+    background-color: #1c1a2c;
     margin: 10% auto;
-    padding: 20px; /* Adiciona preenchimento ao modal */
+    padding: 20px;
     width: 80%;
     max-width: 1200px;
     border-radius: 8px;
@@ -110,9 +110,8 @@ input[type="file"]:hover {
     position: relative;
 }
 
-
 .fechar {
-    color: #eee; /* Cor do botão de fechar */
+    color: #eee;
     font-size: 28px;
     font-weight: bold;
     position: absolute;
@@ -121,15 +120,15 @@ input[type="file"]:hover {
 }
 
 .fechar:hover {
-    color: #fff; /* Cor do botão de fechar ao passar o mouse */
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
 }
 
 button, .ver-detalhes {
     padding: 8px 16px;
-    background-color: #dd901d; /* Cor azul para os botões */
-    color: white; /* Cor do texto nos botões */
+    background-color: #dd901d;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -141,7 +140,7 @@ button, .ver-detalhes {
 }
 
 button:hover, .ver-detalhes:hover {
-    background-color: #b47515; /* Cor azul mais escura ao passar o mouse */
+    background-color: #b47515;
 }
 
 table {
@@ -157,7 +156,7 @@ th, td {
 }
 
 th {
-    background-color: #dd901d; /* Cor do cabeçalho da tabela */
-    color: #eee; /* Cor do texto no cabeçalho da tabela */
+    background-color: #dd901d;
+    color: #eee;
     max-width: 100%;
 }
