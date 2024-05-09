@@ -101,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         divAssunto.innerHTML = `<span class="nome">${assunto}:</span> <span class="ordens">${contagem} vez(es) </span>`;
                         const divBotao = document.createElement('div');
                         divBotao.classList.add('botao-colaborador');
-                        const botao = document.createElement('button');
-                        botao.innerText = 'Ver Detalhes';
-                        botao.onclick = function() {
+                        const botaoVerDetalhes = document.createElement('button');
+                        botaoVerDetalhes.innerText = 'Ver Detalhes';
+                        botaoVerDetalhes.onclick = function() {
                             modal.style.display = 'block';
                             const ordensAssunto = linhas.filter(linha => linha.Assunto === assunto && colaboradoresEspecificos.hasOwnProperty(linha.Colaborador));
                             const conteudoTabela = `<table><tr><th>Colaborador</th><th>Cliente</th><th>Endereço</th><th>Fechamento</th></tr>` +
@@ -112,7 +112,16 @@ document.addEventListener('DOMContentLoaded', function() {
                                 }).join('') + '</table>';
                             textoModal.innerHTML = `<strong>Detalhes para o Assunto "${assunto}":</strong>${conteudoTabela}`;
                         };
-                        divBotao.appendChild(botao);
+                        divBotao.appendChild(botaoVerDetalhes);
+                        
+                        const botaoExportar = document.createElement('button');
+                        botaoExportar.innerText = 'Exportar Planilha';
+                        botaoExportar.onclick = function() {
+                            const ordensAssunto = linhas.filter(linha => linha.Assunto === assunto && colaboradoresEspecificos.hasOwnProperty(linha.Colaborador));
+                            exportarPlanilha(ordensAssunto, assunto);
+                        };
+                        divBotao.appendChild(botaoExportar);
+
                         divAssunto.appendChild(divBotao);
                         divAssuntos.appendChild(divAssunto);
                         divAssuntos.appendChild(document.createElement('br'));
@@ -147,8 +156,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function numeroSerieParaData(numeroSerie) {
-        const dataBaseExcel = new Date(1900, 0, 1);
+        const dataBaseExcel = new Date(1899, 11, 30);
         const data = new Date(dataBaseExcel.getTime() + numeroSerie * 24 * 60 * 60 * 1000);
         return data.toLocaleDateString();
+    }
+
+    // Função para exportar os dados para uma planilha
+    function exportarPlanilha(ordensAssunto, assunto) {
+        const wb = XLSX.utils.book_new();
+        const ws = XLSX.utils.json_to_sheet(ordensAssunto.map(ordem => ({
+            Colaborador: ordem.Colaborador,
+            Cliente: ordem.Cliente,
+            Endereço: ordem.Endereço,
+            Fechamento: ordem.Fechamento ? numeroSerieParaData(ordem.Fechamento) : 'Data de fechamento não consta'
+        })));
+
+        XLSX.utils.book_append_sheet(wb, ws, assunto + "_Detalhes");
+
+        const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+
+        function s2ab(s) {
+            const buf = new ArrayBuffer(s.length);
+            const view = new Uint8Array(buf);
+            for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+            return buf;
+        }
+
+        const blob = new Blob([s2ab(wbout)], { type: "application/octet-stream" });
+
+        const link = document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = assunto + "_Detalhes.xlsx";
+        link.click();
     }
 });
