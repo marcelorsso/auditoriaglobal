@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         resultados.innerHTML = '';
         const assuntos = {};
         const colaboradoresEspecificos = {
-            'ALAN NORONHA FERREIRA': [], 'BRUNO MARTINS CARDOSO': [], 'ISMAEL ALVES GRAIA': [],
-            'LUCAS FIGUEIREDO DOS REIS': [], 'MARCELO APARECIDO PEREIRA': [], 'MASSIVA': [],
-            'PAULO CESAR MARCELLINO': [], 'PEDRO GOMES DE LIMA': [], 'ROBISON RAMOS': [],
-            'RODRIGO SANTOS GUIMARAES': [], 'RONNY DA SILVA LUZ': [], 'SAMUEL SANTOS DE ARAUJO': [],
-            'THIAGO PEREIRA CAMARGOS': [], 'WENDER RENS MIRANDA BELISARIO': [], 'PAULO RODRIGUES DOS SANTOS': [], 'JOSÉ DE FREITAS DA SILVA NETO': []
+            'COLABORADOR 1': [], 'COLABORADOR 2': [], 'COLABORADOR 3': [],
+            'COLABORADOR 4': [], 'COLABORADOR 5': [], 'COLABORADOR 6': [],
+            'COLABORADOR 7': [], 'COLABORADOR 8': [], 'COLABORADOR 9': [],
+            'COLABORADOR 10': [], 'COLABORADOR 11': [], 'COLABORADOR 12': [],
+            'COLABORADOR 13': [], 'COLABORADOR 14': [], 'COLABORADOR 15': [], 'COLABORADOR 16': []
         };
 
         linhas.forEach(linha => {
